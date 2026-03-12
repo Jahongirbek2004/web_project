@@ -2,109 +2,86 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Codeblock Интерпретатор</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блочный редактор</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Шапка с кнопками -->
     <div class="header">
-        <h1>Codeblock Интерпретатор</h1>
+        <h1>🔷 Blockcode</h1>
         <div class="header-buttons">
             <button class="btn btn-run">▶ Запустить</button>
-            <button class="btn btn-clear">🗑 Очистить все</button>
-            <button class="btn btn-examples">📚 Примеры</button>
+            <button class="btn btn-clear">🗑 Очистить</button>
+            <button class="btn btn-examples">📋 Пример</button>
         </div>
     </div>
 
-    <!-- Три колонки -->
     <div class="container">
-        <!-- Левая колонка - блоки алгоритма -->
         <div class="left-panel">
-            <h3>📦 Блоки алгоритма</h3>
-            
-            <h4>📤 ПЕРЕМЕННЫЕ</h4>
-            <div class="block variable">
-                <strong>📤 Объявление переменных</strong>
-                <div class="block-desc">x, y, z</div>
+            <h3>📦 Доступные блоки</h3>
+            <h4>📤 Переменные</h4>
+            <div class="block variable" draggable="true" data-type="variable">
+                <strong>Объявление переменных</strong>
+                <div class="block-desc">Создание новых переменных</div>
             </div>
-            
-            <h4>➡️ ОПЕРАЦИИ</h4>
-            <div class="block assignment">
-                <strong>➡️ Присваивание</strong>
-                <div class="block-desc">x = выражение</div>
+            <h4>➡️ Операторы</h4>
+            <div class="block assignment" draggable="true" data-type="assignment">
+                <strong>Присваивание</strong>
+                <div class="block-desc">Присвоить значение переменной</div>
             </div>
-            
-            <h4>🔀 УПРАВЛЕНИЕ</h4>
-            <div class="block if">
-                <strong>🔀 Условие If</strong>
-                <div class="block-desc">если ... то</div>
+            <h4>🔀 Управление</h4>
+            <div class="block if" draggable="true" data-type="if">
+                <strong>Условие IF</strong>
+                <div class="block-desc">Ветвление по условию</div>
             </div>
-            <div class="block begin">
-                <strong>{ } Begin-End</strong>
-                <div class="block-desc">блок команд</div>
+            <div class="block begin" draggable="true" data-type="begin">
+                <strong>Begin-End блок</strong>
+                <div class="block-desc">Группировка блоков</div>
             </div>
         </div>
 
-        <!-- Центральная колонка - рабочая область -->
         <div class="center-panel">
             <div class="workspace" id="workspace">
                 <div class="workspace-placeholder">
-                    <p>✨ Перетащите блоки сюда для создания алгоритма</p>
-                    <p class="hint">Можно создавать вложенные структуры, перетаскивая блоки внутрь других блоков</p>
+                    <p>✨ Перетащите блоки сюда</p>
+                    <p class="hint">Можно создавать вложенные структуры</p>
                 </div>
             </div>
         </div>
 
-        <!-- Правая колонка - информация -->
         <div class="right-panel">
-            <!-- Переменные -->
             <div class="panel-section">
                 <h3>📊 Переменные</h3>
-                <div class="variables-box">
+                <div class="variables-box" id="variablesBox">
                     <div class="empty-message">Нет объявленных переменных</div>
                 </div>
             </div>
-
-            <!-- Вывод программы -->
             <div class="panel-section">
-                <h3>📝 Вывод программы</h3>
-                <div class="output-box">
-                    <!-- Здесь будет вывод -->
-                </div>
+                <h3>📟 Вывод</h3>
+                <div class="output-box" id="outputBox"></div>
             </div>
-
-            <!-- Ошибки -->
             <div class="panel-section">
                 <h3>⚠️ Ошибки</h3>
-                <div class="errors-box">
-                    <!-- Здесь будут ошибки -->
-                </div>
+                <div class="errors-box" id="errorsBox"></div>
             </div>
-
-            <!-- Состояние -->
             <div class="panel-section">
-                <h3>📊 Состояние</h3>
+                <h3>📈 Состояние</h3>
                 <div class="status-box">
                     <div class="status-item">
-                        <span class="status-label">Блоков в программе:</span>
+                        <span class="status-label">Блоков:</span>
                         <span class="status-value" id="blocksCount">0</span>
                     </div>
                     <div class="status-item">
                         <span class="status-label">Переменных:</span>
                         <span class="status-value" id="varsCount">0</span>
                     </div>
-                    <div class="status-item">
-                        <span class="status-label">Статус:</span>
-                        <span class="status-value" id="programStatus">Готов к работе</span>
-                    </div>
                     <div class="status-progress">
-                        <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+                        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

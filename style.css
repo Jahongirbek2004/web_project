@@ -1,16 +1,15 @@
-/* ===== СБРОС СТИЛЕЙ ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* ===== ОСНОВНЫЕ НАСТРОЙКИ ===== */
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #1a1a2e;
     color: #333;
 }
-/* ===== ШАПКА ===== */
+
 .header {
     background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
     color: #fff;
@@ -23,7 +22,6 @@ body {
 .header h1 { font-size: 24px; font-weight: 300; }
 .header-buttons { display: flex; gap: 10px; }
 
-/* ===== КНОПКИ ===== */
 .btn {
     padding: 8px 20px;
     border: none;
@@ -51,15 +49,12 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(33,150,243,0.3);
 }
-
-/* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
 .container {
     display: flex;
     height: calc(100vh - 70px);
     gap: 1px;
     background: #ddd;
 }
-/* ===== ЛЕВАЯ ПАНЕЛЬ (ПАЛИТРА БЛОКОВ) ===== */
 .left-panel {
     width: 280px;
     background: #fff;
@@ -80,7 +75,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-/* Блоки в палитре */
 .left-panel .block {
     background: #f8f9fa;
     border: 2px solid;
@@ -95,14 +89,13 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .left-panel .block strong { display: block; margin-bottom: 5px; font-size: 14px; }
-/* Цвета для разных типов блоков */
+
 .left-panel .block.variable { border-color: #4caf50; background: #f0f9f0; }
 .left-panel .block.assignment { border-color: #ff9800; background: #fff3e0; }
 .left-panel .block.if { border-color: #f44336; background: #ffebee; }
 .left-panel .block.begin { border-color: #9c27b0; background: #f3e5f5; }
 .left-panel .block-desc { color: #666; font-size: 12px; margin-top: 3px; font-style: italic; }
 
-/* ===== ЦЕНТРАЛЬНАЯ ПАНЕЛЬ (РАБОЧАЯ ОБЛАСТЬ) ===== */
 .center-panel {
     flex: 1;
     background: #f5f5f5;
@@ -118,7 +111,7 @@ body {
 }
 .workspace p { color: #666; font-size: 18px; margin-bottom: 10px; }
 .workspace .hint { color: #999; font-size: 14px; font-style: italic; }
-/* ===== ПРАВАЯ ПАНЕЛЬ (ИНФОРМАЦИЯ) ===== */
+
 .right-panel {
     width: 300px;
     background: #f8f9fa;
@@ -142,7 +135,6 @@ body {
     border-bottom: 2px solid #f0f0f0;
 }
 
-/* Блоки вывода */
 .variables-box, .output-box, .errors-box {
     padding: 12px;
     border-radius: 6px;
@@ -153,9 +145,9 @@ body {
     white-space: pre-wrap;
 }
 .variables-box { background: #f8f9fa; color: #333; }
-.output-box { background: #1e1e2f; color: #fff; }
+.output-box { background: #19192a; color: #fff; }
 .errors-box { background: #1e1e2f; color: #ff6b6b; }
-/* Статус-бар */
+
 .status-box {
     background: #f0f7ff;
     padding: 12px;
@@ -183,7 +175,6 @@ body {
     background: linear-gradient(90deg, #4caf50, #8bc34a);
     transition: 0.3s;
 }
-/* ===== БЛОКИ В РАБОЧЕЙ ОБЛАСТИ ===== */
 .code-block {
     background: #fff;
     border: 2px solid;
@@ -191,15 +182,15 @@ body {
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-/* Цвета границ */
+
 .code-block.variable { border-color: #4caf50; }
 .code-block.assignment { border-color: #ff9800; }
 .code-block.if { border-color: #f44336; }
 .code-block.begin { border-color: #9c27b0; }
-/* Состояния блока */
+
 .code-block.dragging { opacity: 0.3; transform: scale(0.95); }
 .code-block.error { border-color: red; box-shadow: 0 0 10px rgba(255,0,0,0.5); }
-/* Заголовок блока */
+
 .block-header {
     padding: 10px;
     background: #f8f9fa;
@@ -215,7 +206,7 @@ body {
     padding: 0 5px;
 }
 .delete-btn:hover { color: #f44336; }
-/* Тело блока */
+
 .block-body { padding: 10px; }
 .input-group { margin-bottom: 8px; }
 .input-group label {
@@ -232,7 +223,7 @@ body {
 }
 .condition-row { display: flex; gap: 5px; }
 .condition-row input, .condition-row select { flex: 1; }
-/* Вложенные области */
+
 .nested-area, .else-area {
     min-height: 60px;
     border: 2px dashed #ccc;
@@ -243,7 +234,7 @@ body {
 }
 .else-area { border-color: #ff9800; background: #fff3e0; display: none; }
 .else-area.visible { display: block; }
-/* Секция ELSE */
+
 .else-section {
     margin-top: 10px;
     border-top: 2px dashed #ff9800;
@@ -269,7 +260,7 @@ body {
     transition: 0.3s;
 }
 .toggle-else:hover { background: #f57c00; transform: translateY(-2px); }
-/* Плейсхолдеры */
+
 .nested-placeholder, .workspace-placeholder, .else-placeholder {
     color: #999;
     font-style: italic;
@@ -277,7 +268,7 @@ body {
     padding: 20px;
 }
 .empty-message { color: #999; font-style: italic; text-align: center; padding: 10px; }
-/* Индикаторы при перетаскивании */
+
 .insert-marker {
     height: 4px;
     background: #ff9800;
@@ -290,11 +281,11 @@ body {
     background: rgba(76,175,80,0.1) !important;
 }
 
-/* Таблица переменных */
+
 .variables-table { width: 100%; }
 .variables-table td { padding: 3px; }
 .variables-table td:first-child { color: #2196f3; font-weight: 700; }
-/* Стилизация скроллбара */
+
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
