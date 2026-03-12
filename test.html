@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>gegegKLNMKOKONKNOe</title>
+    <meta charset="UTF-8">
+    <title>Codeblock Интерпретатор</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Привет, мир РАУАсвввНА!</h1> <!-- Заголовок -->
-    <p>Это мой первый <strong>жирный</strong> текст.</p> <!-- Абзац -->
-    <a href="https://google.com">Перейти в Google</a> <!-- Ссылка -->
-    <img src="cat.jpg" alt="Милый котик"> <!-- Картинка -->
+    <!-- Шапка с кнопками -->
+    <div class="header">
+        <h1>Codeblock Интерпретатор</h1>
+        <div class="header-buttons">
+            <button class="btn btn-run">▶ Запустить</button>
+            <button class="btn btn-clear">🗑 Очистить все</button>
+            <button class="btn btn-examples">📚 Примеры</button>
+        </div>
+    </div>
+
+    <!-- Три колонки -->
+    <div class="container">
+        <!-- Левая колонка - блоки алгоритма -->
+        <div class="left-panel">
+            <h3>📦 Блоки алгоритма</h3>
+            
+            <h4>📤 ПЕРЕМЕННЫЕ</h4>
+            <div class="block variable">
+                <strong>📤 Объявление переменных</strong>
+                <div class="block-desc">x, y, z</div>
+            </div>
+            
+            <h4>➡️ ОПЕРАЦИИ</h4>
+            <div class="block assignment">
+                <strong>➡️ Присваивание</strong>
+                <div class="block-desc">x = выражение</div>
+            </div>
+            
+            <h4>🔀 УПРАВЛЕНИЕ</h4>
+            <div class="block if">
+                <strong>🔀 Условие If</strong>
+                <div class="block-desc">если ... то</div>
+            </div>
+            <div class="block begin">
+                <strong>{ } Begin-End</strong>
+                <div class="block-desc">блок команд</div>
+            </div>
+        </div>
+
+        <!-- Центральная колонка - рабочая область -->
+        <div class="center-panel">
+            <div class="workspace" id="workspace">
+                <div class="workspace-placeholder">
+                    <p>✨ Перетащите блоки сюда для создания алгоритма</p>
+                    <p class="hint">Можно создавать вложенные структуры, перетаскивая блоки внутрь других блоков</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правая колонка - информация -->
+        <div class="right-panel">
+            <!-- Переменные -->
+            <div class="panel-section">
+                <h3>📊 Переменные</h3>
+                <div class="variables-box">
+                    <div class="empty-message">Нет объявленных переменных</div>
+                </div>
+            </div>
+
+            <!-- Вывод программы -->
+            <div class="panel-section">
+                <h3>📝 Вывод программы</h3>
+                <div class="output-box">
+                    <!-- Здесь будет вывод -->
+                </div>
+            </div>
+
+            <!-- Ошибки -->
+            <div class="panel-section">
+                <h3>⚠️ Ошибки</h3>
+                <div class="errors-box">
+                    <!-- Здесь будут ошибки -->
+                </div>
+            </div>
+
+            <!-- Состояние -->
+            <div class="panel-section">
+                <h3>📊 Состояние</h3>
+                <div class="status-box">
+                    <div class="status-item">
+                        <span class="status-label">Блоков в программе:</span>
+                        <span class="status-value" id="blocksCount">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Переменных:</span>
+                        <span class="status-value" id="varsCount">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Статус:</span>
+                        <span class="status-value" id="programStatus">Готов к работе</span>
+                    </div>
+                    <div class="status-progress">
+                        <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
